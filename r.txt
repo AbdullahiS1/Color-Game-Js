@@ -1,0 +1,41 @@
+var colors= [
+    "rgb(255, 0, 0)",
+    "rgb(255, 255, 0)",
+    "rgb(0, 255, 0)",
+    "rgb(0, 255, 255)",
+    "rgb(0, 0, 255)",
+    "rgb(255, 0, 255)"
+]
+
+
+
+
+easyBtn.addEventListener("click", function () {
+  //   alert("Hard btn clicked");
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+  numSquare = 3;
+  colors = generateRandomColors(numSquare);
+  picColor = pickColor();
+  colorDisplay.textContent = picColor;
+  for (var i = 0; i < squares.length; i++) {
+    if (colors[i]) {
+      squares[i].style.backgroundColor = colors[i];
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
+});
+hardBtn.addEventListener("click", function () {
+  //   alert("Hard btn clicked");
+  easyBtn.classList.remove("selected");
+  hardBtn.classList.add("selected");
+  numSquare = 6;
+  colors = generateRandomColors(numSquare);
+  picColor = pickColor();
+  colorDisplay.textContent = picColor;
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+    squares[i].style.display = "block";
+  }
+});
